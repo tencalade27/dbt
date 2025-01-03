@@ -1,3 +1,17 @@
+-- dbt will default the query to create a view in Snowflake.
+-- Use the config() function to manually dictate the configuration of the following query
+-- if you want the resulting creation to be something other than a view.
+-- In this case, we want to create an actual table instead of a view.
+
+{{
+    
+    config(
+        materialized='table'
+    )
+}}
+
+-- Now we actually run the query that will create the resulting model by which the table will be built.
+    
 with customers as (
 
     select
