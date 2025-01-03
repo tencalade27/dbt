@@ -34,14 +34,14 @@ from raw.jaffle_shop.orders
 with customers as (
     
     select *
-    from {{ ref('stg_jaffle_shop__customers') }}
+    from {{ ref('stg_jaffle_shop__customers') }} -- this macro function ref() establishes the dependency between tables/views.
 
 ),
 
 orders as (
 
     select *
-    from {{ ref('stg_jaffle_shop__orders') }}
+    from {{ ref('stg_jaffle_shop__orders') }} -- this macro function ref() establishes the dependency between tables/views.
 
 ),
 
