@@ -21,6 +21,7 @@ from raw.jaffle_shop.orders
 -- Use the config() function to manually dictate the configuration of the following query
 -- if you want the resulting creation to be something other than a view.
 -- In this case, we want to create an actual table instead of a view.
+-- This config() is only needed if the paraters in the .yml file have not been set.
 
 {{
     
