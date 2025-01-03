@@ -10,5 +10,6 @@ sources:
     loaded_at_field: _etl_loaded_at # find timestamp column in the source data to base this off of
     tables:
       - name: customers
+        freshness: null # use in the case where a table does not possess a timestamp column to refresh data
       - name: orders
         
