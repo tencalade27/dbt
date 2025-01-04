@@ -11,5 +11,15 @@ sources:
     tables:
       - name: customers
         freshness: null # use in the case where a table does not possess a timestamp column to refresh data
+        columns: 
+          - name: id
+            tests:
+              - unique
+              - not_null
       - name: orders
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
         
