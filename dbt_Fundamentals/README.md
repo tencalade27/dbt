@@ -8,3 +8,4 @@ This project showcases pipeline automation from raw data source data platform (S
 + ETL Automation
 + Data Governance
 + Code Troubleshooting
++ Analytics Engineering
