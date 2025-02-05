@@ -1,0 +1,13 @@
+-- models/schema.yml
+version: 2
+models:
+  - name: orders
+    columns:
+      - name: id
+        tests:
+          - unique
+          - not_null
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['shipped', 'pending', 'delivered']
