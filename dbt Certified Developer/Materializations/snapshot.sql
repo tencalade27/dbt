@@ -1,4 +1,10 @@
--- snapshots are used to capture historical data
+-- snapshots are used to capture the state of a table over time
+-- can track changes row by row
+-- can be useful when:
+    -- you don't have timestamps on updates in source system
+    -- you need to audit changes to data
+    -- you want to implement Slowly Changing Dimension (SCD) Type 2
+
 {% snapshot snap_products %}
 
 {{
