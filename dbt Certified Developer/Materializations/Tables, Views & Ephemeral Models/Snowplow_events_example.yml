@@ -1,0 +1,15 @@
+# Incremental models maintain the old tables, but add new records along to it.
+# This .yml tracks events on a page as far as page changes, pings, etc.,
+  # in the "Inspect" developer console by right-clicking on the page you're on.
+  
+version: 2
+sources:
+  - name: snowplow
+    database: raw
+    loaded_at_field: collector_stamp
+
+    freshness:
+      error_after: {count: 1, period: hour}
+
+    tables:
+      - name: events 
