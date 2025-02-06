@@ -14,4 +14,4 @@ exposures:
       name: Trey Encalade
       email: tencalade27@gmail.com
 
-+ execute with dbt run --select+exposure:(fact_table)
++ execute with dbt run --select+exposure:*
