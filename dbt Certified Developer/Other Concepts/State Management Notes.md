@@ -8,7 +8,9 @@
 + ✅ Safer deployments by focusing on models that need updates.
 
 ## How Does It Work?
-dbt generates a state artifact (manifest.json) after every run, which contains:
++ dbt by design is idempotent and stateless by default
+  + Idempotent - when you execute a dbt build command multiple times with the same underlying data sources, you get the same results.
+  + Stateless - each dbt build command runs independently of the results of the previous build, i.e. the results of the previous build do not inform / impact future runs
 
 ## Models, tests, exposures, snapshots
 + Dependencies between models
