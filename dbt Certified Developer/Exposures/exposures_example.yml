@@ -13,3 +13,5 @@ exposures:
     owner:
       name: Trey Encalade
       email: tencalade27@gmail.com
+
++ execute with dbt run --select+exposure:(fact_table)
