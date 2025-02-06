@@ -1,17 +1,29 @@
 exposures:
-  - name: weekly_jaffle_metrics
-    label: Jaffles by the week
-    type: dashboard
+  - name: Orders_data
+    label: Orders_data
+    type: notebook
     maturity: high
-    url: https://bi.tool/dashboards/1
-    description: >
-      Did someone say "exponential growth"?
-
+    url: https://tinyurl.com/jaffle-shop-reporting
+    description: 'Expsosure for orders metrics'
     depends_on:
-      - ref('dim_jaffles')
-
+      - ref('fct_orders')
+      - metric('order_total')
+      - metric('large_orders')
+      - metric('cumulative_order_amount_mtd')
     owner:
-      name: Trey Encalade
-      email: tencalade27@gmail.com
+      name: Michael McData
+      email: data@jaffleshop.com
+  
+  - name: Customers_data
+    label: Customers_data
+    type: notebook
+    maturity: high
+    url: https://tinyurl.com/jaffle-shop-reporting
+    description: 'Exposure for customer metrics'
+    depends_on:
+      - ref('dim_customers')
+    owner: 
+      name: Data Startrek
+      email: operations_manager@enterprise.com
 
 + execute with dbt run --select+exposure:*
