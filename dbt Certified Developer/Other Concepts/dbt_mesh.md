@@ -12,15 +12,15 @@ dbt Mesh is an architectural approach that enables multiple teams to collaborate
 + ✅ Enhances governance by enforcing common standards across teams.
 
 ## How dbt Mesh Works
-1️⃣ Multiple Teams, Multiple dbt Projects
++ 1️⃣ Multiple Teams, Multiple dbt Projects
 
 Instead of one monolithic dbt project, each team has its own dbt repository (e.g., Marketing, Finance, Product).
 Each team manages its own dbt models, tests, and transformations.
-2️⃣ Publishing and Sharing Models
++ 2️⃣ Publishing and Sharing Models
 
 Teams publish trusted, production-ready models into a shared warehouse.
 Other teams consume these models as "external tables" instead of duplicating logic.
-3️⃣ Decoupled Development & Deployment
++ 3️⃣ Decoupled Development & Deployment
 
 Each team deploys changes independently without affecting others.
 Common governance and standards ensure consistency across teams.
