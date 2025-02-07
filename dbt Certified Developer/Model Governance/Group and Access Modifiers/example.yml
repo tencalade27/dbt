@@ -1,0 +1,5 @@
+models:
+  - name: dim_customers
+    access: private  # Only models in this package can use it
+    config:
+      group: analytics_team  # Only the analytics team can run it
