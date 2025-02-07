@@ -1,4 +1,4 @@
-A company has three teams using dbt:
+## A company has three teams using dbt:
 
 Team	    | Owns These Models	Consumes These Models
 --------------------------------------------------------
