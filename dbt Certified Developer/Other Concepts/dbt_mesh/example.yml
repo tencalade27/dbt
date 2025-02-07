@@ -1,0 +1,9 @@
+# dbt-marketing/models/schema.yml
+sources:
+  - name: finance
+    tables:
+      - name: dim_customers
+
+# dbt-marketing/models/marketing_campaigns.sql
+select *
+from {{ source('finance', 'dim_customers') }}
