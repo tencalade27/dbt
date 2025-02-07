@@ -1,0 +1,17 @@
+# group creation yaml
+groups:
+  - name: finance_team
+    owner:
+      email: finance_lead@example.com
+  - name: analytics_team
+    owner:
+      email: analytics_manager@example.com
+
+# model application of the groups.yml
+models:
+  - name: fact_sales
+    config:
+      group: finance_team  # Only users in 'finance_team' can run this model
+  - name: dim_customers
+    config:
+      group: analytics_team  # Only the analytics team can run this model
