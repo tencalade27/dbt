@@ -19,3 +19,9 @@ models:
   - name: dim_customers
     config:
       group: analytics_team  # Only the analytics team can run this model
+
+# fact table application
+groups:
+    - name: fct_orders
+         group: finance_team
+         access: public
