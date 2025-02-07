@@ -2,10 +2,14 @@
 groups:
   - name: finance_team
     owner:
+      name: Abacus Moneybags
       email: finance_lead@example.com
+      github: finance-data-team
   - name: analytics_team
-    owner:
+    owner: 
+      name: Bon Jovi
       email: analytics_manager@example.com
+      github: dead-or-alive
 
 # model application of the groups.yml
 models:
