@@ -1,0 +1,15 @@
+packages:
+  - git: "https://github.com/company/dbt_finance.git"       # external project #1
+    revision: main
+  - git: "https://github.com/company/dbt_marketing.git"     # external project #2
+    revision: main
+
+# Once added as a dependency, use the {{ ref() }} function to reference external models.
+
+# SELECT 
+#     c.customer_id, 
+#     c.customer_name,
+#     f.total_revenue
+# FROM {{ ref('dbt_finance', 'fact_revenue') }} AS f
+# JOIN {{ ref('dbt_marketing', 'dim_customers') }} AS c
+# ON f.customer_id = c.customer_id
