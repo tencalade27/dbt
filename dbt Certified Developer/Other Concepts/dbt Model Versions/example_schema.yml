@@ -1,0 +1,25 @@
+models:
+  - name: dim_customers
+    versions:
+      - v: 1
+        columns:
+          - name: customer_id
+            data_type: string
+          - name: customer_name
+            data_type: string
+      - v: 2
+        columns:
+          - name: customer_id
+            data_type: string
+          - name: full_name  # Renamed from customer_name
+            data_type: string
+          - name: signup_date  # New column added
+            data_type: date
+
+# Deprecating old versions
+models:
+  - name: dim_customers
+    versions:
+      - v: 1
+        deprecated: true  # Signals that this version will be removed
+      - v: 2
