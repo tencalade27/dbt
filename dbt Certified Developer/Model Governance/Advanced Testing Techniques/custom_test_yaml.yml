@@ -7,3 +7,4 @@ models:
       - name: customer_lifetime_value
         tests:
           - assert_positive
+# fails if any negative values exist in the customer_lifetime_values column
