@@ -1,0 +1,11 @@
+# Used for defining metadata rules
+# Example: ensuring models have an owner and tags
+models:
+  meta_tests:
+    required_meta_fields:
+      - field: owner
+        valid_values: ['analytics', 'finance', 'marketing']
+      - field: tags
+        valid_values: ['core', 'deprecated', 'experimental']
+# This enforce the requirement that every model MUST have an owner from the allowed values AND...
+# models MUST have a 'tags' field
