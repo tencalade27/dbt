@@ -1,0 +1,8 @@
+Best for continuous monitoring of data quality
+Example: dbt Cloud webhook alert:
+
+{
+  "text": "🚨 dbt Test Failed in {{ env_name }}: Check {{ run_url }}"
+}
+
+This ensures immediate visibility into data quality issues
