@@ -1,0 +1,5 @@
+# Add via packages.yml
+packages:
+  - package: equalexperts/dbt_meta_testing
+    version: 0.3.0
+ # after this, run the package install via 'dbt deps'
