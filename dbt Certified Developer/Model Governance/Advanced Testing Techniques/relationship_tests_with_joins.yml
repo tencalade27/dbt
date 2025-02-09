@@ -1,0 +1,11 @@
+# Best for checking foreign key integrity
+# Example: ensuring all orders.customer_id exist in customers.customer_id
+models:
+  - name: orders
+    columns:
+      - name: customer_id
+        tests:
+          - relationships:
+              to: ref('customers')
+              field: customer_id
+# This ensures referential integrity between tables
