@@ -1,0 +1,9 @@
+# Use for when complex logic isn't covered by built-in tests
+# Example: ensuring customer_lifetime_value is always positive
+
+models:
+  - name: customer_metrics
+    columns:
+      - name: customer_lifetime_value
+        tests:
+          - assert_positive
