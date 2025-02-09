@@ -9,3 +9,6 @@ models:
         valid_values: ['core', 'deprecated', 'experimental']
 # This enforce the requirement that every model MUST have an owner from the allowed values AND...
 # models MUST have a 'tags' field
+
+# after installation and rules setup, execute dbt test --select meta_tests
+  # passes if all metadata rules are met, fails if conditions aren't met
