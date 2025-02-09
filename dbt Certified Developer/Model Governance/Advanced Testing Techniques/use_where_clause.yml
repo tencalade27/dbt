@@ -1,0 +1,11 @@
+# Best for testing only a subset of records, such as recent data
+# Example: validate that recent transactions have status = 'completed'
+models:
+  - name: transactions
+    columns:
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['completed']
+              where: "order_date >= current_date - interval '30' day"
+# This only test the last 30 days of data, making checks faster and relevant
