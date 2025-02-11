@@ -1,0 +1,10 @@
+3️⃣ Automating Alerts (Slack, Email, etc.)
+To notify your team of failures:
+
+1️⃣ Slack Alert (via dbt Cloud Webhooks)
+In dbt Cloud, set up a webhook:
+Add this JSON template:
+
+{
+  "text": "🚨 dbt Test Failure in {{ env_name }}: Check {{ run_url }}"
+}
