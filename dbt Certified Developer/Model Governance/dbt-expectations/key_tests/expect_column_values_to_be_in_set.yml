@@ -1,0 +1,11 @@
+# Checks that column values fall within a predefined list.
+
+version: 2
+models:
+  - name: transactions
+    tests:
+      - dbt_expectations.expect_column_values_to_be_in_set:
+          column_name: transaction_type
+          value_set: ['credit', 'debit', 'refund']
+
+# Use case: Prevents invalid categories or labels
