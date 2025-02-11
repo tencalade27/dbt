@@ -1,0 +1,12 @@
+# Validates that a column’s average falls within a range.
+
+version: 2
+models:
+  - name: sales
+    tests:
+      - dbt_expectations.expect_column_mean_to_be_between:
+          column_name: revenue
+          min_value: 1000
+          max_value: 100000
+
+# Use case: Detects unexpected revenue spikes or drops
