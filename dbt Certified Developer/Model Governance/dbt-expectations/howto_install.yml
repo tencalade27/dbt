@@ -1,0 +1,8 @@
+# Add this to your packages.yml:
+
+packages:
+  - package: calogica/dbt_expectations
+    version: [latest_version]  # Check for latest version
+
+# then install with
+dbt deps
