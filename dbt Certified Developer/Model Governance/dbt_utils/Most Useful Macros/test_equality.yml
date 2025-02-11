@@ -1,0 +1,12 @@
+# test_equality – Compare Two Models for Differences
+    # Checks if two tables are identical.
+
+version: 2
+models:
+  - name: transformed_orders
+    tests:
+      - dbt_utils.equality:
+          compare_model: ref('staging_orders')
+
+# why use it
+  # ensures data consistency between transformations
