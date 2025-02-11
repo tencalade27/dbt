@@ -1,0 +1,11 @@
+# Validates that column values follow a specific pattern (e.g., emails, phone numbers).
+
+version: 2
+models:
+  - name: users
+    tests:
+      - dbt_expectations.expect_column_values_to_match_regex:
+          column_name: email
+          regex: '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$'
+
+# Use case: Ensures correct email formats
