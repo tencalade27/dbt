@@ -1,0 +1,10 @@
+# Ensures two tables have the same number of rows (useful for ETL validation).
+
+version: 2
+models:
+  - name: transformed_users
+    tests:
+      - dbt_expectations.expect_row_count_to_equal_other_table:
+          compare_model: ref('staging_users')
+
+# Use case: Detects missing records after transformations
