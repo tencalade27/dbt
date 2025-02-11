@@ -1,0 +1,7 @@
+# Add this to packages.yml:
+packages:
+  - package: dbt-labs/dbt_audit_helper
+    version: [latest_version]  # Check for the latest version
+
+# Then install it:
+dbt deps
