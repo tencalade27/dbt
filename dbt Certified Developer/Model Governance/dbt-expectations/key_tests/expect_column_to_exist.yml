@@ -1,0 +1,10 @@
+# Checks if a column exists in a table.
+
+version: 2
+models:
+  - name: customer_data
+    tests:
+      - dbt_expectations.expect_column_to_exist:
+          column_name: email
+
+# Use case: Ensures schema consistency after data changes
