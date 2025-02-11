@@ -1,0 +1,10 @@
+# Ensures a column has no NULL values (stricter than not_null).
+
+version: 2
+models:
+  - name: orders
+    tests:
+      - dbt_expectations.expect_column_values_to_not_be_null:
+          column_name: order_date
+
+# ✅ Use case: Ensures critical data fields are always populated
