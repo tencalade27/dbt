@@ -1,0 +1,10 @@
+# Ensures a column has only unique values (like a primary key).
+
+version: 2
+models:
+  - name: customers
+    tests:
+      - dbt_expectations.expect_column_values_to_be_unique:
+          column_name: customer_id
+
+# Use case: Prevents duplicate primary keys
