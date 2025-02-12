@@ -1,0 +1,24 @@
+# 1) defining grants
+# you can set default permissions for models:
+models:
+  my_project:
+    staging:
+      +grants:
+        select: ["analyst", "data_engineer"]
+# use case: grants SELECT access to analyst and data_engineer for all staging models
+
+# 2) assigning grants in a model's YAML file
+models:
+  - name: sales_report
+    description: "Aggregated sales data"
+    grants:
+      select: ["sales_analyst"]
+      insert: ["etl_user"]
+      update: ["etl_user"]
+# use case:
+  # sales_analyst can only query the data
+  # etl_user can modify the data
+
+# 3) running dbt run with grants applied
+# when executing models, dbt applies the defined permissions aytomatically
+dbt run --select sales_report
