@@ -1,8 +1,9 @@
--- dbt will default the query to create a view in Snowflake.
--- Use the config() function to manually dictate the configuration of the following query
--- if you want the resulting creation to be something other than a view.
--- In this case, we want to create an actual table instead of a view.
--- This config() is only needed if the paraters in the .yml file have not been set.
+/* 
+dbt will default the query to create a view in Snowflake.
+Use the config() function to manually dictate the configuration of the following query if you want the resulting creation to be something other than a view.
+In this case, we want to create an actual table instead of a view.
+This config() is only needed if the parameters in the .yml file have not been set.
+*/
 
 {{   
     config(
@@ -10,18 +11,16 @@
     )
 }}
 
--- Now we actually run the query that will create the resulting model by which the table will be built.
+-- Now run the query that will create the resulting model by which the table will be built.
     
 with customers as (
     select *
     from {{ ref('stg_jaffle_shop__customers') }} -- this macro function ref() establishes the dependency between tables/views.
 ),
-
 orders as (
     select *
-    from {{ ref('fct_orders') }} -- this macro function ref() establishes the dependency between tables/views.
+    from {{ ref('fct_orders') }}
 ),
-
 customer_orders as (
     select
         customer_id,
@@ -32,7 +31,6 @@ customer_orders as (
     from orders
     group by 1
 ),
-
 final as (
     select
         customers.customer_id,
@@ -45,5 +43,4 @@ final as (
     from customers
     left join customer_orders using (customer_id)
 )
-
 select * from final
