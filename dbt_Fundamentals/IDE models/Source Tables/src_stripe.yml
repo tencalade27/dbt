@@ -1,12 +1,42 @@
-version: 2
+version: 3
 
 sources:
   - name: stripe
     database: raw
     schema: stripe
-    freshness: 
-          error_after: {count: 1, period: day}
+    description: Raw Stripe source data. Contains sensitive financial and payment information. Access to downstream models should be restricted.
+    freshness:
           warn_after: {count: 6, period: hour}
+          error_after: {count: 1, period: day}
     loaded_at_field: _batched_at
     tables:
       - name: payment
+        description: Customer payment transactions from Stripe. This table contains sensitive financial data and should be treated as confidential.
+        tags: ["sensitive", "financial", "pci"]
+        meta:
+          contains_pii: true
+          contains_payment_data: true
+          data_classification: confidential
+          approved_access_roles:
+            - finance
+            - billing
+            - analytics_engineering
+        columns:
+          - name: payment_id
+            description: Unique identifier for the payment.
+          - name: customer_id
+            description: Stripe customer identifier.
+            meta:
+              contains_pii: true
+          - name: amount
+            description: Payment amount in the smallest currency unit (e.g. cents).
+            meta:
+              contains_payment_data: true
+          - name: currency
+            description: ISO currency code for the payment.
+          - name: payment_method
+            description: Type of payment method used (card, bank_transfer, etc.).
+            meta:
+              contains_payment_data: true
+          - name: created_at
+            description: Timestamp when the payment was created.
