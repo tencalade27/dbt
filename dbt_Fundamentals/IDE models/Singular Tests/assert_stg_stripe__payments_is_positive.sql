@@ -1,3 +1,6 @@
+/*
+This creates a temporary named result set called 'payments' and runs a query to ensure that all values are positive.
+*/
 with payments as (
     select * from {{ ref('stg_stripe__payments') }}
 )
