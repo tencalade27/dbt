@@ -1,12 +1,12 @@
 version: 2
 
 sources:
-  - name: Test_Company
+  - name: hr
     database: raw
-    schema: human_rss
+    schema: hr
     tables:
       - name: employees
-        desciption: Employee demographic data
+        description: Employee demographic data
       - name: departments
         description: Department & organizational structure data
       - name: compensation
