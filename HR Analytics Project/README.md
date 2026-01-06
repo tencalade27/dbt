@@ -19,14 +19,14 @@ The project is designed to reflect rela-world dbt workflows, including:
 
 ## Data Model
 ### Source Tables:
-- raw.Test_Company.employees
-- raw.Test_Company.departments
-- raw.Test_Company.compensation
+- raw.hr.employees
+- raw.hr.departments
+- raw.hr.compensation
 
 ### Staging Models:
-- stg_Test_Company_employees
-- stg_Test_Company_departments
-- stg_Test_Company_compensation
+- stg_hr_employees
+- stg_hr_departments
+- stg_hr_compensation
 
 ### Intermediate Models:
 - int_employee_latest_comp
