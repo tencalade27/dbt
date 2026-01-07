@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: dim_employee
+    description: "Employee dimension containing demographic and organizational attributes"
+    columns:
+      - name: employee_id
+        tests:
+          - not_null
+          - unique
+      - name: employee_status
+        tests:
+          - accepted_values:
+              values: ['active', 'terminated']
+
+# dbt test -- select marts.hr.dim_employee
