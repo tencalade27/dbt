@@ -12,5 +12,12 @@ models:
         tests:
           - accepted_values:
               values: ['active', 'terminated']
+  - name: fct_employee_compensation
+    description: "Fact table containing latest compensation by employee"
+    columns:
+      - name: employee_id
+        tests:
+          - not_null
 
-# dbt test -- select marts.hr.dim_employee
+# dbt test --select marts.hr.dim_employee
+# dbt test --select marts.hr.fct_employee_compensation
