@@ -17,30 +17,26 @@ The project is designed to reflect rela-world dbt workflows, including:
   - (Snowflake was used for this project)
 - GitHub (version control)
 
-## Data Model
-### Source Tables:
-- raw.hr.employees
-- raw.hr.departments
-- raw.hr.compensation
+## Project Structure
+- **Sources**: Raw HR employee, department, and compensation data
+- **Staging**: Standardized and documented HR data models
+- **Intermediate**: Business logic for salary history and org hierarchy
+- **Marts**: BI-ready dimensions and fact tables
 
-### Staging Models:
-- stg_hr_employees
-- stg_hr_departments
-- stg_hr_compensation
+## Data Quality & Governance
+- Source definitions with documentation
+- Column-level tests (not null, unique, accepted values)
+- Controlled transformations and grain enforcement
+- PII-aware modeling approach
 
-### Intermediate Models:
-- int_employee_latest_comp
-- int_employee_org_structure
+## Key Models
+- `dim_employee`
+- `fct_employee_compensation`
 
-### Final Analytics Models (Marts):
-- dim_employee
-- fct_employee_compensation
-
-These models support common HR analytics use cases, such as:
+## Business Use Cases
 - Workforce demographics reporting
 - Compensation analysis
-- Tenure & seniority reporting
-- Manager-to-employee relationships
+- Management span-of-control analysis
 - Executive HR dashboards
 
 ---
