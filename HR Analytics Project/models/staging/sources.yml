@@ -11,3 +11,7 @@ sources:
         description: Department & organizational structure data
       - name: compensation
         description: Salary & compensation records
+
+# dbt source freshness, or
+# dbt run --select source:hr
+# no errors returned
