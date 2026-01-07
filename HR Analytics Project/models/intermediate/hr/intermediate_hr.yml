@@ -11,6 +11,9 @@ models:
       - name: base_salary
         tests:
           - not_null
+      - name: effective_date
+        tests:
+          - not_null
   - name: int_employee_org_structure
     descriptioin: "Employee-to-manager organizational structure"
     columns:
