@@ -18,6 +18,9 @@ models:
       - name: employee_id
         tests:
           - not_null
+      - name: effective_date
+        tests:
+          - not_null
 
 # dbt test --select marts.hr.dim_employee
 # dbt test --select marts.hr.fct_employee_compensation
