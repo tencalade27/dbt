@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: stg_hr_employees
+    description: "Staging model for employee demographic and employment data"
+    columns:
+      - name: employee_id
+        tests:
+          - not_null
+          - unique
+      - name: department_id
+        tests:
+          - not_null
+      - name: employee_status
+        tests:
+          - accepted_values:
+              values: ['active', 'terminated']
+  - name: stg_hr_departments
+    description: "Staging model for department and organizational structure data"
+    columns:
+      - name: department_id
+        tests:
+          - not_null
+          - unique
+      - name: department_name
+        tests:
+          - not_null
+
+# dbt test --select staging.hr.stg_hr_(insert specific table), to check table against test conditions outlined here:
+  # dbt test --select staging.hr.stg_hr_employees
+  # dbt test --select staging.hr.stg_hr_departments
+  ## dbt test --select staging.hr.stg_hr_compensation
