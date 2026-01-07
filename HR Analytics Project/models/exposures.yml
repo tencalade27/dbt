@@ -1,0 +1,16 @@
+version: 2
+
+exposures:
+  - name: hr_exec_dashboard
+    type: dashboard
+    maturity: high
+    description: >
+      Executive HR dashboard used to analyze workforce demographics, organizational structure, and compensation trends.
+    owner:
+      name: HR Analytics Team
+      email: hr-analytics@example.com
+    depends_on:
+      - ref('dim_employee')
+      - ref('fct_employee_compensation')
+
+# dbt docs generate
