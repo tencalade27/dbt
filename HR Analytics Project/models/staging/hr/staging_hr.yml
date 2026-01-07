@@ -25,8 +25,18 @@ models:
       - name: department_name
         tests:
           - not_null
+  - name: stg_hr_compensation
+    description: "Staging model for employee compensation records"
+    columns:
+      - name: employee_id
+        tests:
+          - not_null
+          - unique
+      - name: effective_date
+        tests:
+          - not_null
 
 # dbt test --select staging.hr.stg_hr_(insert specific table), to check table against test conditions outlined here:
   # dbt test --select staging.hr.stg_hr_employees
   # dbt test --select staging.hr.stg_hr_departments
-  ## dbt test --select staging.hr.stg_hr_compensation
+  # dbt test --select staging.hr.stg_hr_compensation
