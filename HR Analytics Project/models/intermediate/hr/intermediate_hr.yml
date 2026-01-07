@@ -11,6 +11,13 @@ models:
       - name: base_salary
         tests:
           - not_null
+  - name: int_employee_org_structure
+    descriptioin: "Employee-to-manager organizational structure"
+    columns:
+      - name: employee_id
+        tests:
+          - not_null
+          - unique
 
 # dbt test --select intermediate.hr.int_(insert specific table), to check table against test conditions outlined here:
   # dbt test --select intermediate.hr.int_employee_latest_compensation
