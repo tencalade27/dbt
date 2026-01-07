@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: int_employee_latest_compensation
+    description: "Latest active compensation record per employee"
+    columns:
+      - name: employee_id
+        tests:
+          - not_null
+          - unique
+      - name: base_salary
+        tests:
+          - not_null
+
+# dbt test --select intermediate.hr.int_(insert specific table), to check table against test conditions outlined here:
+  # dbt test --select intermediate.hr.int_employee_latest_compensation
+  # dbt test --select intermediate.hr.int_employee_org_structure
