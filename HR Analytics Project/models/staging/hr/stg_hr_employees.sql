@@ -16,3 +16,5 @@ select
   department_id,
   manager_id
 from {{ source('hr', 'employees') }}
+
+-- dbt run --select staging.hr.stg_hr_employees, to check for errors.
